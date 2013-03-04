@@ -19,98 +19,32 @@
     </style>
   </head>
   <body>
+  	
     <div id="wrap">
-      <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="brand" href="#"><img src="img/ueb.png" alt="universidad el bosque logo"/>Universidad El Bosque</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li class="active"><a href="#">Inicio</a></li>              
-              
-              <li class="active"><a href="#">Noticias</a></li>  
-                            
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Semilleros <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Semillero 1</a></li>
-                  <li><a href="#">Semillero 2</a></li>
-                  <li><a href="#">Semillero 3</a></li>
-                  <li class="divider"></li>
-                  <li class="nav-header">Semillero 4</li>
-                  <li><a href="#">Semillero 5</a></li>
-                  <li><a href="#">Semillero 6</a></li>
-                </ul>
-              </li>
-            </ul>
-            
-            <form class="navbar-form pull-right">
-              <input class="span2" type="text" placeholder="Email" ></input>
-              <input class="span2" type="password" placeholder="Password" ></input>  
-              <input class="btn" type="button" value="Ingresar">            
-            </form>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
-    <div class="container">
-   	 <!-- Main hero unit for a primary marketing message or call to action -->
-		
-		<div id="this-carousel-id" class="carousel slide">
-			<!-- class of slide for animation -->
-			<div class="carousel-inner">
-				<div class="item active">
-					<!-- class of active since it's the first item -->
-					<img src="img/foto_15.jpg" alt="semillero universidad el bosque" />
-					<div class="carousel-caption">
-						<p class="landing-page-p"><img src="img/logotipo_ueb.png" alt="universidad el bosque logo"/> Semilleros Universidad El Bosque</p>
-					</div>
-				</div>				
-			</div>
-			<!-- /.carousel-inner -->
-			<!--  Next and Previous controls below
-      href values must reference the id for this carousel -->
-			<a class="carousel-control left" href="#this-carousel-id"
-				data-slide="prev">&lsaquo;</a> <a class="carousel-control right"
-				href="#this-carousel-id" data-slide="next">&rsaquo;</a>
-		</div>
-		<!-- /.carousel -->
-
-
-		<!-- Example row of columns -->
-      <div class="row">
-        <div class="span4">
-          <h2>Noticia 1</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn" href="#">Leer &raquo;</a></p>
-        </div>
-        <div class="span4">
-          <h2>Noticia 2</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn" href="#">Leer &raquo;</a></p>
-       </div>
-        <div class="span4">
-          <h2>Noticia 3</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn" href="#">Leer &raquo;</a></p>
-        </div>
+    	<div class="header"></div>
+    	     
+    	<div class="container">
+    		<div id="content"></div>
+    	</div>    
+    	
+    	<footer class="footer">  	       
+	        	<p class="muted credit">Av. Cra 9 No. 131 A - 02 • Edificio Fundadores • Línea Gratuita 018000 113033 • PBX (571) 6489000 • Bogotá D.C. - Colombia.</p>	    
+	    </footer>
+    	
     </div>
     
-    <div id="push"></div>
-    </div>
-    
-     <footer class="footer">  
-     	<div class="container">   	
-        	<p class="muted credit">Av. Cra 9 No. 131 A - 02 • Edificio Fundadores • Línea Gratuita 018000 113033 • PBX (571) 6489000 • Bogotá D.C. - Colombia.</p>
-        </div>
-     </footer>
+     
     
     <script src="http://code.jquery.com/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="lib/json2.js"></script>
+    <script src="lib/underscore.js"></script>
+    <script src="lib/backbone.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+    
+    <script src="js/utils.js"></script>	
+	<script src="js/views/HeaderView.js"></script>
+	<script src="js/views/HomeView.js"></script>
+	<script src="js/views/SemilleroListView.js"></script>	
+	<script src="js/main.js"></script>
   </body>
 </html>
