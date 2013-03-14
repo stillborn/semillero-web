@@ -33,7 +33,9 @@ var AppRouter = Backbone.Router.extend({
     semilleroDetail: function(id){    	    	
     	var semillero = new Semillero({_id: id});
     	    	    		
-        $("#content").html(new SemilleroView({model: semillero}).el);              
+        $("#content").html(new SemilleroView({model: semillero}).el);       
+        
+        $('#inputDate').datepicker();
     }
 });
 

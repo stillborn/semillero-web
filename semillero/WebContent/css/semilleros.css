@@ -28,9 +28,16 @@
  	font-size: 40px;
     padding: 20px;
  }
+ /******************Utils************/
+ .separator {
+ 	border-bottom: solid #eee 1px;
+ 	margin-bottom : 20px;
+ 	margin-top : 20px;	 
+ }
+ /******************Utils************/
+ 
  
  /******************Semillero List************/
- 
  .semillero {
  	border-bottom: solid #eee 1px;	 	
  	margin-bottom : 10px;
@@ -50,6 +57,30 @@
  .semillero-description .btn{
  	margin-top : 16px; 
  }
-
-
  /******************Semillero List************/
+ 
+ /******************Semillero View************/ 
+.semillero-description-container{
+ 	width: 600px; 
+ }
+ 
+ .semillero-description-container p{
+ 	text-align:justify;
+	text-justify:auto;
+ }
+ 
+ .semillero-social-container{ 	
+ 	margin-top: 60px;
+    padding-left: 20px;
+    width: 300px;
+ }  
+
+.semillero-info-box{
+	border: solid #eee 1px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	padding: 10px;
+}
+ /******************Semillero View************/
+ 
