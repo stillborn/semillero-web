@@ -1,4 +1,4 @@
-window.SemilleroView = Backbone.View.extend({
+window.NewsListView = Backbone.View.extend({
 
     initialize: function () {
         this.render();

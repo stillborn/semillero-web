@@ -24,8 +24,32 @@
 
  /******************Sticky Footer************/
 
- 
  .landing-page-p {
  	font-size: 40px;
     padding: 20px;
  }
+ 
+ /******************Semillero List************/
+ 
+ .semillero {
+ 	border-bottom: solid #eee 1px;	 	
+ 	margin-bottom : 10px;
+ 	margin-top : 40px; 	
+ 	padding-bottom: 30px;
+ }
+ 
+ .semillero-image {
+ 	float : left;
+ 	width : 230px; 	
+ }
+ 
+ .semillero-image img {
+ 	height: 150px;
+ }
+ 
+ .semillero-description .btn{
+ 	margin-top : 16px; 
+ }
+
+
+ /******************Semillero List************/
