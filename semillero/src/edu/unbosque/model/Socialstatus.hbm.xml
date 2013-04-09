@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 8/04/2013 04:11:46 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="edu.unbosque.model.Socialstatus" table="socialstatus" catalog="semillero">
+        <id name="idSocialStatus" type="int">
+            <column name="id_socialStatus" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="45" not-null="true" />
+        </property>
+        <set name="semillerosocials" table="semillerosocial" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="SocialStatus_id_socialStatus" not-null="true" />
+            </key>
+            <one-to-many class="edu.unbosque.model.Semillerosocial" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 8/04/2013 04:11:46 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="edu.unbosque.model.Semilleroschedule" table="semilleroschedule" catalog="semillero">
+        <id name="idSemilleroSchedule" type="int">
+            <column name="id_semilleroSchedule" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="semilleros" class="edu.unbosque.model.Semilleros" fetch="select">
+            <column name="Semilleros_id_semillero" not-null="true" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="name" length="45" />
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="200" />
+        </property>
+        <set name="semilleroscheludeitemses" table="semilleroscheludeitems" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="SemilleroSchedule_id_semilleroSchedule" not-null="true" />
+            </key>
+            <one-to-many class="edu.unbosque.model.Semilleroscheludeitems" />
+        </set>
+    </class>
+</hibernate-mapping>

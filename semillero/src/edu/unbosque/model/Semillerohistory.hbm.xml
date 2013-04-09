@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 8/04/2013 04:11:46 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="edu.unbosque.model.Semillerohistory" table="semillerohistory" catalog="semillero">
+        <id name="idSemilleroHistory" type="java.lang.Integer">
+            <column name="id_semilleroHistory" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="semilleros" class="edu.unbosque.model.Semilleros" fetch="select">
+            <column name="Semilleros_id_semillero" not-null="true" />
+        </many-to-one>
+        <property name="actionDate" type="timestamp">
+            <column name="action_date" length="19" />
+        </property>
+        <property name="actionDescription" type="string">
+            <column name="action_description" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

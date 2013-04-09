@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 8/04/2013 04:11:46 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="edu.unbosque.model.Semilleros" table="semilleros" catalog="semillero">
+        <id name="idSemillero" type="java.lang.Integer">
+            <column name="id_semillero" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="45" />
+        </property>
+        <property name="semilleroscol" type="string">
+            <column name="Semilleroscol" length="45" />
+        </property>
+        <property name="mission" type="string">
+            <column name="mission" length="200" not-null="true" />
+        </property>
+        <property name="vision" type="string">
+            <column name="vision" length="200" not-null="true" />
+        </property>
+        <property name="generalObjectives" type="string">
+            <column name="general_objectives" length="200" />
+        </property>
+        <property name="specificObjectives" type="string">
+            <column name="specific_objectives" length="500" />
+        </property>
+        <property name="workStrategy" type="string">
+            <column name="work_strategy" length="200" />
+        </property>
+        <property name="webpage" type="string">
+            <column name="webpage" length="45" />
+        </property>
+        <property name="creationDate" type="date">
+            <column name="creation_date" length="10" not-null="true" />
+        </property>
+        <property name="image" type="string">
+            <column name="image" length="45" not-null="true" />
+        </property>
+        <set name="messageses" table="semilleros_has_messages" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="Semilleros_id_semillero" not-null="true" />
+            </key>
+            <many-to-many entity-name="edu.unbosque.model.Messages">
+                <column name="Messages_id_message" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="researchlineses" table="semilleros_has_researchlines" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="Semilleros_id_semillero" not-null="true" />
+            </key>
+            <many-to-many entity-name="edu.unbosque.model.Researchlines">
+                <column name="ResearchLines_id_researchline" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="semilleroattachmentses" table="semilleroattachments" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Semilleros_id_semillero" not-null="true" />
+            </key>
+            <one-to-many class="edu.unbosque.model.Semilleroattachments" />
+        </set>
+        <set name="publicationses" table="semilleros_has_publications" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="Semilleros_id_semillero" not-null="true" />
+            </key>
+            <many-to-many entity-name="edu.unbosque.model.Publications">
+                <column name="Publications_id_publication" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="messagesesForSemillerosIdSemilleroTo" table="messages" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Semilleros_id_semillero_to" not-null="true" />
+            </key>
+            <one-to-many class="edu.unbosque.model.Messages" />
+        </set>
+        <set name="messagesesForSemillerosIdSemilleroFrom" table="messages" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Semilleros_id_semillero_from" not-null="true" />
+            </key>
+            <one-to-many class="edu.unbosque.model.Messages" />
+        </set>
+        <set name="semillerohistories" table="semillerohistory" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Semilleros_id_semillero" not-null="true" />
+            </key>
+            <one-to-many class="edu.unbosque.model.Semillerohistory" />
+        </set>
+        <set name="semillerosocials" table="semilleros_has_semillerosocial" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="Semilleros_id_semillero" not-null="true" />
+            </key>
+            <many-to-many entity-name="edu.unbosque.model.Semillerosocial">
+                <column name="SemilleroSocial_id_semilleroSocial" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="semilleroeventses" table="semilleros_has_semilleroevents" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="Semilleros_id_semillero" not-null="true" />
+            </key>
+            <many-to-many entity-name="edu.unbosque.model.Semilleroevents">
+                <column name="SemilleroEvents_id_semilleroEvents" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="workstrategieses" table="semilleros_has_workstrategies" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="Semilleros_id_semillero" not-null="true" />
+            </key>
+            <many-to-many entity-name="edu.unbosque.model.Workstrategies">
+                <column name="WorkStrategies_id_workStrategies" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="researchareases" table="semilleros_has_researchareas" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="Semilleros_id_semillero" not-null="true" />
+            </key>
+            <many-to-many entity-name="edu.unbosque.model.Researchareas">
+                <column name="ResearchAreas_id_researcharea" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="newses" table="news" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Semilleros_id_semillero" not-null="true" />
+            </key>
+            <one-to-many class="edu.unbosque.model.News" />
+        </set>
+        <set name="semilleroschedules" table="semilleroschedule" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Semilleros_id_semillero" not-null="true" />
+            </key>
+            <one-to-many class="edu.unbosque.model.Semilleroschedule" />
+        </set>
+        <set name="userses" table="students_by_semillero" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="Semilleros_id_semillero" not-null="true" />
+            </key>
+            <many-to-many entity-name="edu.unbosque.model.Users">
+                <column name="Users_id_user" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="userses_1" table="leaders_by_semillero" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="Semilleros_id_semillero" not-null="true" />
+            </key>
+            <many-to-many entity-name="edu.unbosque.model.Users">
+                <column name="Users_id_user" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="userses_2" table="teaching_by_semillero" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="Semilleros_id_semillero" not-null="true" />
+            </key>
+            <many-to-many entity-name="edu.unbosque.model.Users">
+                <column name="Users_id_user" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

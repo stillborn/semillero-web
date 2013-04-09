@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 8/04/2013 04:11:46 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="edu.unbosque.model.Messages" table="messages" catalog="semillero">
+        <id name="idMessage" type="java.lang.Integer">
+            <column name="id_message" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="semillerosBySemillerosIdSemilleroTo" class="edu.unbosque.model.Semilleros" fetch="select">
+            <column name="Semilleros_id_semillero_to" not-null="true" />
+        </many-to-one>
+        <many-to-one name="users" class="edu.unbosque.model.Users" fetch="select">
+            <column name="Users_id_user_from" not-null="true" />
+        </many-to-one>
+        <many-to-one name="semillerosBySemillerosIdSemilleroFrom" class="edu.unbosque.model.Semilleros" fetch="select">
+            <column name="Semilleros_id_semillero_from" not-null="true" />
+        </many-to-one>
+        <property name="subject" type="string">
+            <column name="subject" length="45" not-null="true" />
+        </property>
+        <property name="message" type="string">
+            <column name="message" length="45" not-null="true" />
+        </property>
+        <property name="deleveryDate" type="timestamp">
+            <column name="delevery_date" length="19" not-null="true" />
+        </property>
+        <property name="readDate" type="timestamp">
+            <column name="read_date" length="19" not-null="true" />
+        </property>
+        <set name="semilleroses" table="semilleros_has_messages" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="Messages_id_message" not-null="true" />
+            </key>
+            <many-to-many entity-name="edu.unbosque.model.Semilleros">
+                <column name="Semilleros_id_semillero" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

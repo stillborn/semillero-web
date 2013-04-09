@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+ <session-factory>
+  <property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+  <property name="hibernate.connection.datasource">java:/MySQLDS</property>
+  <property name="current_session_context_class">thread</property>
+  <mapping class="edu.unbosque.model.Faculties"/>
+  <mapping class="edu.unbosque.model.Groups"/>
+  <mapping class="edu.unbosque.model.Messages"/>
+  <mapping class="edu.unbosque.model.News"/>
+  <mapping class="edu.unbosque.model.Permissions"/>
+  <mapping class="edu.unbosque.model.Programs"/>
+  <mapping class="edu.unbosque.model.Publications"/>
+  <mapping class="edu.unbosque.model.Researchareas"/>
+  <mapping class="edu.unbosque.model.Researchlines"/>
+  <mapping class="edu.unbosque.model.Roles"/>
+  <mapping class="edu.unbosque.model.Semilleroattachments"/>
+  <mapping class="edu.unbosque.model.Semilleroevents"/>
+  <mapping class="edu.unbosque.model.Semillerohistory"/>
+  <mapping class="edu.unbosque.model.Semilleros"/>
+  <mapping class="edu.unbosque.model.Semilleroschedule"/>
+  <mapping class="edu.unbosque.model.Semilleroscheludeitems"/>
+  <mapping class="edu.unbosque.model.Semillerosocial"/>
+  <mapping class="edu.unbosque.model.Socialstatus"/>
+  <mapping class="edu.unbosque.model.Status"/>
+  <mapping class="edu.unbosque.model.Users"/>
+  <mapping class="edu.unbosque.model.Workstrategies"/>
+ </session-factory>
+</hibernate-configuration>

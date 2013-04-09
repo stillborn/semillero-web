@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 8/04/2013 04:11:46 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="edu.unbosque.model.Semilleroattachments" table="semilleroattachments" catalog="semillero">
+        <id name="idSemilleroAttachment" type="int">
+            <column name="id_semilleroAttachment" />
+            <generator class="assigned" />
+        </id>
+        <version name="version" type="java.lang.Integer">
+            <column name="version" />
+        </version>
+        <many-to-one name="semilleros" class="edu.unbosque.model.Semilleros" fetch="select">
+            <column name="Semilleros_id_semillero" not-null="true" />
+        </many-to-one>
+        <property name="creationDate" type="timestamp">
+            <column name="creationDate" length="19" not-null="true" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="45" not-null="true" />
+        </property>
+        <property name="attachmentPath" type="string">
+            <column name="attachmentPath" length="45" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

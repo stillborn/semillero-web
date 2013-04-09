@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 8/04/2013 04:11:46 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="edu.unbosque.model.Faculties" table="faculties" catalog="semillero">
+        <id name="idFaculty" type="java.lang.Integer">
+            <column name="id_faculty" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="45" />
+        </property>
+        <set name="programses" table="programs" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Faculties_id_faculty" not-null="true" />
+            </key>
+            <one-to-many class="edu.unbosque.model.Programs" />
+        </set>
+    </class>
+</hibernate-mapping>
