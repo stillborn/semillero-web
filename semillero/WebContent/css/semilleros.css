@@ -83,4 +83,28 @@
 	padding: 10px;
 }
  /******************Semillero View************/
+
+
+ /******************Custom Prime Faces************/
+.ui-widget, .ui-widget .ui-widget {
+	font-size: 75% !important;
+}
+
+.ui-growl {   
+    position:fixed;
+    top: 10%;
+    left: 70%;
+    width: 360px;
+    height: 110px;
+    z-index:9999; 
+}
+
+.ui-growl-item-container {
+    background-color: #FAA732;
+}
+/******************Custom Prime Faces************/
+
+.ui-widget-content{
+	border: 0px !important;	
+}
  
